@@ -35,6 +35,3 @@ jobs:
 
           echo "wait 5"
           sleep 10
-
-          echo "wait 6"
-          sleep 10
