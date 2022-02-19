@@ -1,0 +1,39 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - production
+  workflow_dispatch:
+    inputs:
+      fire:
+        default: null
+
+concurrency:
+  group: deploy-${{ github.ref }}-{{ github.event.inputs.fire != null }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'push' || github.event.inputs.fire != null }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "wait 1"
+          sleep 10
+
+          echo "wait 2"
+          sleep 10
+
+          echo "wait 3"
+          sleep 10
+
+          echo "wait 4"
+          sleep 10
+
+          echo "wait 5"
+          sleep 10
+
+          echo "wait 6"
+          sleep 10
