@@ -19,7 +19,8 @@ jobs:
     if: ${{ github.event_name == 'push' || github.event.inputs.fire != null }}
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: run long time task
+        run: |
           echo "wait 1"
           sleep 10
 
