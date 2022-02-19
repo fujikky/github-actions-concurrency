@@ -11,7 +11,7 @@ on:
         default: null
 
 concurrency:
-  group: deploy-${{ github.ref }}-{{ github.event.inputs.fire != null }}
+  group: deploy-${{ github.ref }}-${{ github.event.inputs.fire != null }}
   cancel-in-progress: true
 
 jobs:
